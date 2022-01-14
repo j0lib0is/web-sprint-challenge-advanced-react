@@ -1,14 +1,26 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+// INSTRUCTIONS
+// ✅ In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants.`
+
 export default class PlantList extends Component {
-  // add state with a property called "plants" - initialize as an empty array
+  // Add state with a property called "plants" - initialize as an empty array
   state = {
-    plants:[]
+    plants:[],
   }
-  // when the component mounts:
-  //   - fetch data from the server endpoint - http://localhost:3333/plants
-  //   - set the returned plants array to this.state.plants
+
+  componentDidMount() {
+    axios.get('http://localhost:3333/plants')
+      .then(resp => {
+        console.log(resp.data);
+        this.setState({
+          ...this.state,
+          plants: resp.data,
+        });
+      })
+      .catch(err => console.error(err));
+  }
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
