@@ -3,6 +3,8 @@ import axios from "axios";
 
 // INSTRUCTIONS
 // ✅ In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants.`
+// ✅ Set the data to a state property called `this.state.plants.`
+// ✅ The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart.
 
 export default class PlantList extends Component {
   // Add state with a property called "plants" - initialize as an empty array
@@ -34,9 +36,9 @@ export default class PlantList extends Component {
               <p className="plant-scientific-name">{plant.scientificName}</p>
               <p>{plant.description}</p>
               <div className="plant-bottom-row">
-                <p>${plant.price}</p>
-                <p>☀️ {plant.light}</p>
-                <p>💦 {plant.watering}x/month</p>
+                <p>$ {plant.price}</p>
+                <p><span role='img'>☀️</span> {plant.light}</p>
+                <p><span role='img'>💦</span> {plant.watering}x/month</p>
               </div>
               <button
                 className="plant-button"
