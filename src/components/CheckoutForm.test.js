@@ -3,8 +3,14 @@ import MutationObserver from 'mutationobserver-shim';
 import { render } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 
-// Write up the two tests here and make sure they are testing what the title shows
+// INSTRUCTIONS
+// ✅ Fill out code necessary to test that that Checkout form renders without errors.
+// Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
 
-test("renders without errors", () => {});
+test("renders without errors", () => {
+	render(<CheckoutForm />);
+});
 
-test("shows success message on submit with form details", () => {});
+test("shows success message on submit with form details", () => {
+
+});
